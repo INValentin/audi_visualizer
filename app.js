@@ -91,7 +91,7 @@ function init() {
     let bufferSize = analyser.frequencyBinCount
     let data = new Uint8Array(bufferSize)
     let lastUpdate = 0
-
+resize()
     requestAnimationFrame(animate)
 
     function animate(current) {
@@ -137,8 +137,8 @@ function init() {
 }
 
 function resize() {
-    canvas.width = canvas.getBoundingClientRect().width * window.devicePixelRatio
-    canvas.height = canvas.getBoundingClientRect().height * window.devicePixelRatio
+    canvas.width = window.innerWidth * window.devicePixelRatio
+    canvas.height = window.innerHeight * window.devicePixelRatio
 }
 
 
